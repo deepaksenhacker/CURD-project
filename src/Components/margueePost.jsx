@@ -44,7 +44,7 @@ const MargueePost = () => {
                   <div className= "p- mt-1 lg:mt-3 flex flex-col lg:gap-2">
                     
                   <h5 className="font-bold text-sm text-white">{date}</h5>
-                  <h5 className="font-bold text-white">Post name</h5>
+                  <h5 className="font-bold text-white">{title}</h5>
                   <div className="flex gap-3">
                   <Link className='flex-none btn btn-dark text-white ' to={`/posts/view/${_id}`}>
                          <i className="fas fa-marker mx-1" /> 
