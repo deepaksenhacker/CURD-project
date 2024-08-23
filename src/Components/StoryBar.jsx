@@ -9,11 +9,11 @@ const{alluser,loader} = context
   return (
       <>
           
-    <div className="flex  overflow-x-auto space-x-4 p-4 scrollbar-hide justify-center w-full" >
+    <div className="flex  overflow-x-auto space-x-4 p-4 scrollbar-hide justify-center w-full min[500px]:w-100" >
 
       {loader?
       
-      <div  className="flex-none w-24 h-24 bg-gray-200 rounded-full overflow-hidden">
+      <div  className="flex-none w-14 h-14 lg:w-24 lg:h-24 bg-gray-200 rounded-full overflow-hidden">
           <img src="src/assets/loading.jpg" alt="" className="w-full h-full" />
 
       </div>
