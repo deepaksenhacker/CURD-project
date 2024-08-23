@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { 
+background: #494d4a;
+}
+
+
+input[type=file]::file-selector-button{
+  background: rgb(76, 76, 76);
+  padding: 3%;
+  color: white;
+  font-family: serif;
+  background: #000;
+  border-radius: 10%;
+}
+/* image */
+
+.loading{
+  position:absolute;
+  margin: auto;
+  
+}
+
+/* profile */
