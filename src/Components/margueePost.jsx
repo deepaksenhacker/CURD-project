@@ -13,7 +13,7 @@ const MargueePost = () => {
     }
   ,[])
     return (
-        <div className='container  flex  gap-2 justify-center'>
+        <div className='  flex w-full gap-2 justify-center'>
         {/* single */}
      
               {loader?
@@ -37,16 +37,16 @@ const MargueePost = () => {
             const {title,description,_id,image,date} =item;
           
             return (
-              <div key={index} className="flex gap-3   w-full  bg-slate-900 border-1 rounded-xl p-2 hover:bg-slate-700"> 
-                  <div className="flex-none w-14 h-14 lg:w-28 lg:h-28 rounded-full overflow-hidden ">
+              <div key={index} className="flex gap-3   w-full  bg-pink-500 border-1 border-pink-800 rounded-xl p-2 hover:bg-slate-700"> 
+                  <div className="flex-none w-12 h-12 lg:w-20 lg:h-20 border-4 border-white  rounded-2xl overflow-hidden ">
                            <img src={image} alt="" className="w-full h-full object-cover" />  
                   </div>
-                  <div className= "p- mt-1 lg:mt-3 flex flex-col lg:gap-2">
+                  <div className= "p- mt-1 lg:mt-2 flex flex-col lg:gap-2">
                     
                   <h5 className="font-bold text-sm text-white">{date}</h5>
                   <h5 className="font-bold text-white">{title}</h5>
                   <div className="flex gap-3">
-                  <Link className='flex-none btn btn-dark text-white ' to={`/posts/view/${_id}`}>
+                  <Link className='flex-none btn btn-dark hover:text-black text-pink-600 border-pink-700 bg-white  text-sm' to={`/posts/view/${_id}`}>
                          <i className="fas fa-marker mx-1" /> 
                           View
                       </Link>

@@ -4,8 +4,8 @@ import MargueePost from './margueePost';
 
 const Marquee = () => {
     return (
-        <div className=''>
-        <marquee behavior="" direction="">
+        <div className='mb-5 '>
+        <marquee behavior="fast" direction="left">
         <MargueePost/>   
         </marquee>
         </div>

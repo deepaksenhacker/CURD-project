@@ -65,7 +65,7 @@ const imageUpload = async() =>{
 
 return (
         <Layout>
-        <div className="container h-svh  p-2 lg:w-96">
+        <div className=" container h-svh  p-2 ">
                 {loader?<>
                     <div className="loading  w-96 flex  h-svh backdrop-blur-sm sticky">
                         <img src="src/assets/loading.gif" alt="" className='translate-x-24 translate-y-44 w-20 h-20'/>             

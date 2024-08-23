@@ -8,11 +8,8 @@ const{alluser,loader} = context
   
   return (
       <>
-    <div className="container  text-center mt-3 mb-3 text-3xl font-serif font-bold  text-white ">
-         Story <span className="text-sky-500 animate-pulse">Board</span>
-        
-    </div>      
-    <div className="flex overflow-x-auto space-x-4 p-4 scrollbar-hide justify-center">
+          
+    <div className="flex  overflow-x-auto space-x-4 p-4 scrollbar-hide justify-center w-full" >
 
       {loader?
       
@@ -26,12 +23,12 @@ const{alluser,loader} = context
             const {profileImage ,username,_id }=item
           return (<>
             <div className="">
-                 <div key={index} className="flex-none w-24 h-24 bg-gray-200 rounded-full overflow-hidden">
+                 <div key={index} className="flex-none w-24 h-24 border-4 border-pink-600 bg-gray-200  rounded-full overflow-hidden">
                    <Link to={`/profile/view/${_id}`}>
                     <img src={profileImage} alt="" className="w-full h-full object-cover" />
                     </Link>
               </div>
-                      <h5 className="text-center mt-1 font-bold text-cyan-300"><span className="text-white">@</span>{username}</h5>
+                      <h5 className="text-center mt-1 font-bold  text-dark"><span className="text-pink-600">@</span>{username}</h5>
             </div>
           </>)
         })
