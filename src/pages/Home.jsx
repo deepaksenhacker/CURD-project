@@ -10,9 +10,9 @@ const Home = () => {
     return (
          <Layout>
             <>
-            
+            <StoryBar/>     
             <Marquee/> 
-            <StoryBar/> 
+        
        
         <AllPosts/>  
            </>
