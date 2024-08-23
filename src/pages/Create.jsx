@@ -94,7 +94,7 @@ return (
                 <textarea name="" id="" value={description} onChange={(e)=>setdescription(e.target.value)} className="w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700"  />
             </div>
 
-            <h5 className=" text-white">Keywords <span className="fas fa-file-word"></span></h5>
+            <h5 className=" text-dark">Keywords <span className="fas fa-file-word"></span></h5>
                 
             <div className="">
                 <input value={arraydata} onChange={(e)=>setarraydata(e.target.value)} type="text " className="w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700" />
