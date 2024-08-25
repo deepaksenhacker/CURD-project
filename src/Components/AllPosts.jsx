@@ -32,14 +32,19 @@ const AllPosts = () => {
               {AllPosts.length>0?
              AllPosts.map((item,index)=>{
 
-              const {title,description,_id,image ,user} =item;
+              const {title,description,_id,image,user} =item;
+             let userprofile ='';
+              if(user){
+               userprofile = user.profileImage;
+              console.log(userprofile)
+             }
               const keys = item.keywords
               return (
                 <div className="gap-2">
                  <div key={index} className=" w-full  ">
            <div className="flex mb-2 gap-3 ">
                   <div className="w-7 h-7 rounded-full border-2 border-pink-700 overflow-hidden">
-                     <img src={user.profileImage} alt="" className='w-full h-full object-cover' />
+                     <img src={userprofile} alt="" className='w-full h-full object-cover' />
 
                   </div>
                     <h5 className="font-bold ">@</h5>
