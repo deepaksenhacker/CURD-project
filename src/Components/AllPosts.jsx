@@ -56,11 +56,30 @@ const AllPosts = () => {
            <Link to={`/posts/view/${_id}`} className="btn btn-dark w-100 " >
              <img src={image}  alt="" className=" w-full h-full object-cover  hover:scale-110 transition" />
              </Link>
-            </div>     
+            </div>  
+            <div className="mt-2 flex gap-4">
+                <i className="fas fa-heart text-xl" />
+             
+     
+                <i className="fas fa-comment text-xl" />
+
+                <a href={`https://wa.me/?text=Check%20out%20this%20awesome%20content!%20Visit%20our %20site:%20https://dev1001.vercel.app/posts/view/${_id}`} target="_blank" >
+                <i className="fas fa-share-nodes text-xl" />
+                </a>
+            </div>
                   <p className="text-wrap mt-1 p-1 font-bold">{description}  <i className="fab fa-share" /></p> 
                  
 
 
+              </div>
+              <div className="flex flex-col gap-1">
+                <h5 className="text-sm font-bold">Comments</h5>
+             <div className=" justify-center">
+              <textarea name="" id="" cols="" rows="3" className='w-full p-1 border' />
+
+              
+              <button className='btn hover:bg-pink-400 text-sm text-white  bg-pink-500'><i className="fas fa-comment-dots"></i> Comment</button>
+             </div>
               </div>
               </div>
     

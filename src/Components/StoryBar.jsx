@@ -28,7 +28,8 @@ const{alluser,loader} = context
                     <img src={profileImage} alt="" className="w-full h-full object-cover" />
                     </Link>
               </div>
-           
+              <h5 className="text-black text-sm font-bold">{username.length>5?username.slice(0,7)+"...":username}</h5>
+            
             </div>
           </>)
         })
