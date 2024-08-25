@@ -23,12 +23,12 @@ const{alluser,loader} = context
             const {profileImage ,username,_id }=item
           return (<>
             <div className="">
-                 <div key={index} className="flex-none w-24 h-24 border-4 border-pink-600 bg-gray-200  rounded-full overflow-hidden">
+                 <div key={index} className="flex-none w-16 h-16 border-4 border-pink-600 bg-gray-200  rounded-full overflow-hidden">
                    <Link to={`/profile/view/${_id}`}>
                     <img src={profileImage} alt="" className="w-full h-full object-cover" />
                     </Link>
               </div>
-                      <h5 className="text-center mt-1 font-bold  text-dark"><span className="text-pink-600">@</span>{username}</h5>
+           
             </div>
           </>)
         })
