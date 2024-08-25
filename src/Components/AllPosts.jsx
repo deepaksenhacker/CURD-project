@@ -32,11 +32,13 @@ const AllPosts = () => {
               {AllPosts.length>0?
              AllPosts.map((item,index)=>{
 
-              const {title,description,_id,image,user} =item;
+           let {title,description,_id,image,user} =item;
              let userprofile ='';
-              if(user){
+             let username;
+             if(user){
                userprofile = user.profileImage;
-              console.log(userprofile)
+               username = user.username 
+               console.log(userprofile)
              }
               const keys = item.keywords
               return (
@@ -47,7 +49,7 @@ const AllPosts = () => {
                      <img src={userprofile} alt="" className='w-full h-full object-cover' />
 
                   </div>
-                    <h5 className="font-bold ">@</h5>
+                    <h5 className="font-bold ">@ {username}</h5>
               
             </div>       
            <div className="  overflow-hidden" >

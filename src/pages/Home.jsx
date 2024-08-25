@@ -14,9 +14,9 @@ const Home = () => {
             <StoryBar/>     
             <Marquee/>
                  <div className="container flex ">
-                 <div className="">
+                 {/* <div className="w-96 ">
                         <Post/>
-                </div>      
+                </div>       */}
                 <div className="w-96">
                      
                  <AllPosts/> 
