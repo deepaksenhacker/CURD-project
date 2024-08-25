@@ -10,9 +10,10 @@ const Layout = ({children}) => {
     return (
         <>
          <Navbar /> 
-         <div className="flex flex-wrap">
-            {children}
-        </div>  
+        <div className="">
+                 {children}
+         </div>  
+
         <Footer/>
         <BottomNav/>
         </>
