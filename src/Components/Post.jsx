@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MyContext from '../Context/myContext';
 import { Link } from 'react-router-dom';
 import ButtonBack from './ButtonBack';
-
+import loaderimg from '../assets/loader.gif'
 const Post = () => {
   const context = useContext(MyContext);
   const {getPosts , loader , allposts,DeletePost ,AllPosts } =context;
@@ -23,16 +23,13 @@ const Post = () => {
        
                 {loader?
                 <>
-                    <div className='h-svh m-auto'>
+        <div className='h-svh m-auto'>
                           
-                          <h5 className="text-3xl  mt-52 text-center font-serif ">Loading 
-                        
-                          <i className="fas fa-circle mx-2 text-sm animate-ping text-green-600" />
-                          
-                          <i className="fas fa-circle mx-2 text-sm animate-ping text-green-600" />
-                  
+                          <h5 className="text-3xl  mt-52 text-center font-serif ">
+                   
+                          <img src={loaderimg} alt="" className='w-9 h-9 text-center' />
                             </h5>
-                   </div>
+                       </div>
 
                 </> :<>
         

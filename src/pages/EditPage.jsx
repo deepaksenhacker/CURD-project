@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import ButtonBack from '../Components/ButtonBack';
 import MyContext from '../Context/myContext';
-
+import loaderimg from '../assets/loader.gif'
 const EditPage = () => {
  const context = useContext(MyContext)  
  const {user ,loader ,setloader} = context
@@ -98,16 +98,15 @@ const uploadimage= async()=>{
     return (
         <Layout>
           {loader?<>
-            <div className='h-svh m-auto'>
-         
-         <h5 className="text-3xl  mt-52 text-center font-serif ">Loading 
-      
-         <i className="fas fa-circle mx-2 text-sm animate-ping text-green-600" />
-        
-         <i className="fas fa-circle mx-2 text-sm animate-ping text-green-600" />
-        
-         </h5>
-     </div>
+            <div className='container h-svh m-auto'>
+                          
+                          <h5 className="text-3xl  mt-52 text-center font-serif ">
+                   
+                          <img src={loaderimg} alt="" className='w-9 h-9 text-center' />
+                            </h5>
+                       </div>
+          
+
           
           </>:<>
           <div className="container-fluid flex-row  lg:flex  sm:flex-col  min[640px]:flex-col"> 

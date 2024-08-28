@@ -3,7 +3,7 @@ import Layout from '../Components/Layout';
 import MyContext from '../Context/myContext';
 import UploadImage from './UploadImage';
 import { toast } from 'react-hot-toast';
-
+import loaderimg from '../assets/loader.gif'
 
 const Create = () => {
 const context = useContext(MyContext)
@@ -71,7 +71,7 @@ return (
                           
                           <h5 className="text-3xl  mt-52 text-center font-serif ">
                    
-                          <img src="src/assets/loader.gif" alt="" className='w-9 h-9 text-center' />
+                          <img src={loaderimg} alt="" className='w-9 h-9 text-center' />
                             </h5>
                        </div>
           
