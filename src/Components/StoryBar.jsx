@@ -12,11 +12,16 @@ const{alluser,loader} = context
     <div className="flex  overflow-x-auto space-x-4 p-4 scrollbar-hide justify-center w-full min[500px]:w-100" >
 
       {loader?
-      
-      <div  className="flex-none w-14 h-14 lg:w-24 lg:h-24 bg-gray-200 rounded-full overflow-hidden">
-          <img src="src/assets/loading.jpg" alt="" className="w-full h-full" />
+       <div className='h-svh m-auto'>
+                          
+       <h5 className="text-3xl  mt-52 text-center font-serif ">
 
-      </div>
+       <img src="src/assets/loader.gif" alt="" className='w-9 h-9 text-center' />
+         </h5>
+    </div>
+      
+
+
        :<>
        {
         alluser.map((item,index)=>{

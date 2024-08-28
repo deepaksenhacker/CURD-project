@@ -65,43 +65,48 @@ const imageUpload = async() =>{
 
 return (
         <Layout>
-        <div className=" container h-svh  p-2 ">
+       
                 {loader?<>
-                    <div className="loading  w-96 flex  h-svh backdrop-blur-sm sticky">
-                        <img src="src/assets/loading.gif" alt="" className='translate-x-24 translate-y-44 w-20 h-20'/>             
-                </div>
+                    <div className='h-svh m-auto'>
+                          
+                          <h5 className="text-3xl  mt-52 text-center font-serif ">
+                   
+                          <img src="src/assets/loader.gif" alt="" className='w-9 h-9 text-center' />
+                            </h5>
+                       </div>
           
 
                 </>:<>
                 
                 </>}
-
-                    <h5 className="text-center text-2xl font-serif text-sky-600 font-bold">Create <span className='text-black fas fa-pen-to-square'> </span> </h5>
-                    <h5 className="text-center text-xl font-bold text-sky-700">Upload Post Image </h5>    
+                <div className='flex flex-col container  h-svh'>
+                    <h5 className="text-center text-xl font-serif text-sky-600 font-bold">Create <span className='text-black fas fa-pen-to-square'> </span> </h5>
+                    <h5 className="text-center  font-bold text-sky-700">Upload Image </h5>    
                
            <div className="mt-2 mb-2 flex">
-                <input type="file" className='mt-2 text-white' onChange={(e)=>setFile(e.target.files[0])}/>
-                <button className='btn btn-dark w-fit bg-sky-800 text-white ' onClick={imageUpload}>Upload Image</button>         
+                <input type="file" className='mt-2 text-black' onChange={(e)=>setFile(e.target.files[0])}/>
+                <button className='btn btn-dark w-fit bg-sky-800 text-white ' onClick={imageUpload}>Upload 
+                </button>         
             </div>
                    
           
             <div className="mb-2">
-                <h5 className=" text-white">Title <span className="fas fa-file-word"></span></h5>
-                <input type="text " value={title} onChange={(e)=>settitle(e.target.value)} className="w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700" />
+                <h5 className=" text-black">Title <span className="fas fa-file-word"></span></h5>
+                <input type="text " value={title} onChange={(e)=>settitle(e.target.value)} className="w-full  p-2 mt-3 rounded border-2 border-sky-700" />
             </div>
             <div className="mb-2">
-                <h5 className=" text-white">Description <span className="fas fa-file-word"></span></h5>
-                <textarea name="" id="" value={description} onChange={(e)=>setdescription(e.target.value)} className="w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700"  />
+                <h5 className=" text-black">Description <span className="fas fa-file-word"></span></h5>
+                <textarea name="" id="" value={description} onChange={(e)=>setdescription(e.target.value)} className="w-full p-2 mt-3 rounded border-2 border-sky-700"  />
             </div>
 
-            <h5 className=" text-white">Keywords <span className="fas fa-file-word"></span></h5>
+            <h5 className=" text-black">Keywords <span className="fas fa-file-word"></span></h5>
                 
             <div className="">
-                <input value={arraydata} onChange={(e)=>setarraydata(e.target.value)} type="text " className="w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700" />
+                <input value={arraydata} onChange={(e)=>setarraydata(e.target.value)} type="text " className="w-full  p-2 mt-3 rounded border-2 border-sky-700" />
                 <button onClick={AddHandle} className=' p-1 btn btn-dark bg-sky-600 -mx-8'><i className="fas fa-plus "/></button>
             </div>
            <div className="mt-2 mb-2">
-            <h5 className="text-sm  text-white">Keyword</h5>
+            <h5 className="text-sm  text-black">Keyword</h5>
                 <ul className="flex flex-wrap gap-4 ">
                     {keywords.length >0 ? 
                     keywords.map((item,index)=>(
@@ -109,12 +114,12 @@ return (
                         <button className="btn mx-2" onClick={()=>removeArrayItem(index)}> <i className=" fas fa-delete-left" /></button>
                         </li>
                     )) 
-                    : <><li className="text-white">No Keywords</li> </>}
+                    : <><li className="text-black">No Keywords</li> </>}
                 </ul>
             </div>   
         <div className="mt-2 mb-2">
                 
-                <button onClick={sendPost} className='w-full lg:w-72   md:w-full p-2 mt-3 rounded border-2 border-sky-700 text-white bg-sky-600 hover:bg-sky-500'>Upload Post</button>
+                <button onClick={sendPost} className='w-full p-2 mt-3 rounded border-2 border-sky-700 text-white bg-sky-600 hover:bg-sky-500'>Upload Post</button>
 
         </div>
         <div className="mt-2 mb-2">
@@ -122,9 +127,8 @@ return (
         
         </div>
         
-
         </div>
-           
+        
         </Layout>
     );
 }

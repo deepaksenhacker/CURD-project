@@ -8,7 +8,7 @@ import StoryBar from '../Components/StoryBar';
 const Profile = () => {
     const context = useContext(MyContext);
     const {user ,allposts ,loader } =context;
-const profilepic = user? user.profileImage :'src/assets/loading.jpg'
+const profilepic = user? user.profileImage :'https://i.pinimg.com/originals/3e/f0/e6/3ef0e69f3c889c1307330c36a501eb12.gif'
 
 return (
 
