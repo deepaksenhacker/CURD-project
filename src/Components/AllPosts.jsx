@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import MyContext from '../Context/myContext';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ const AllPosts = () => {
 
    const context = useContext(MyContext);
    const {getAllPosts ,AllPosts ,loader } = context;
+   const [liked , setliked] = useState(false);
    
    useEffect(()=>{
     getAllPosts()
@@ -58,14 +59,22 @@ const AllPosts = () => {
              </Link>
             </div>  
             <div className="mt-2 flex gap-4">
-                <i className="fas fa-heart text-xl" />
-             
-     
+                <div className="flex  gap-1">
+                 <i className={`fas fa-heart text-xl 
+                 ${liked?`text-red-600`:`text-black`}
+                 `} />
+         
+                <h5 className="font-bold ">Like</h5>
+                </div>
+           <div className="flex  gap-1">
+          
                 <i className="fas fa-comment text-xl" />
+                <h5 className="font-bold">Comment</h5>
+          </div>
 
-                <a href={`https://wa.me/?text=Check%20out%20this%20awesome%20content!%20Visit%20our %20site:%20https://dev1001.vercel.app/posts/view/${_id}`} target="_blank" >
-                <i className="fas fa-share-nodes text-xl" />
-                </a>
+                <a href={`https://wa.me/?text=Check%20out%20this%20awesome%20content!%20Visit%20our %20site:%20https://dev1001.vercel.app/posts/view/${_id}`} target="_blank" className='font-bold'>
+                <i className="fas fa-share-nodes text-xl" /> Share
+                 </a>
             </div>
                   <p className="text-wrap mt-1 p-1 font-bold">{description}  <i className="fab fa-share" /></p> 
                  
