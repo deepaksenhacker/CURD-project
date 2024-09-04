@@ -59,23 +59,17 @@ const AllPosts = () => {
              </Link>
             </div>  
             <div className="mt-2 flex gap-4">
-                <div className="flex  gap-1">
-                 <i className={`fas fa-heart text-xl 
-                 ${liked?`text-red-600`:`text-black`}
+                 <i className={`fas fa-heart text-3xl 
+                 ${liked?`text-red-600`:`text-zinc-400`}
                  `} />
          
-                <h5 className="font-bold ">Like</h5>
-                </div>
-           <div className="flex  gap-1">
           
-                <i className="fas fa-comment text-xl" />
-                <h5 className="font-bold">Comment</h5>
-          </div>
-
+                <i className="fas fa-comment text-3xl text-zinc-300" />
                 <a href={`https://wa.me/?text=Check%20out%20this%20awesome%20content!%20Visit%20our %20site:%20https://dev1001.vercel.app/posts/view/${_id}`} target="_blank" className='font-bold'>
-                <i className="fas fa-share-nodes text-xl" /> Share
+                <i className="fas fa-share-nodes text-3xl text-zinc-400" />
                  </a>
             </div>
+                 <h5 className="font-bold m-1">2 Likes </h5>
                   <p className="text-wrap mt-1 p-1 font-bold">{description}  <i className="fab fa-share" /></p> 
                  
 
