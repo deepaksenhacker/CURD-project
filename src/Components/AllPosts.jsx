@@ -5,13 +5,41 @@ import { Link } from 'react-router-dom';
 const AllPosts = () => {
 
    const context = useContext(MyContext);
-   const {getAllPosts ,AllPosts ,loader } = context;
-   const [liked , setliked] = useState(false);
-   
-   useEffect(()=>{
+   const {getAllPosts ,AllPosts ,loader  } = context;
+const [like ,setlike] = useState(0)
+let [ liked ,setliked ] = useState(false) 
+const [postloader  , setpostloader] =useState(false)
+
+useEffect(()=>{
     getAllPosts()
    },[])
 
+   const likethepost = async(postid)=>{
+    setpostloader(true)
+    setliked(true)
+    console.log(liked)
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/posts/post/${postid}/like`,
+      {
+
+        method :'PUT',
+              headers:{
+                'Content-Type':'application/json',
+                'auth-token':localStorage.getItem('token')
+              }
+      }
+  
+      )
+      const data = await res.json();
+      console.log(data.post.likes)
+      setlike(data.post.likes.length)
+      
+      setpostloader(false)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
 
     return (
         <div className='h-fit  flex flex-wrap gap-6 justify-center '>
@@ -33,7 +61,7 @@ const AllPosts = () => {
               {AllPosts.length>0?
              AllPosts.map((item,index)=>{
 
-           let {title,description,_id,image,user} =item;
+           let {title,description,_id,image,user,likes} =item;
              let userprofile ='';
              let username;
              if(user){
@@ -55,21 +83,33 @@ const AllPosts = () => {
             </div>       
            <div className="  overflow-hidden" >
            <Link to={`/posts/view/${_id}`} className="btn btn-dark w-100 " >
-             <img src={image}  alt="" className=" w-full h-full object-cover  hover:scale-110 transition" />
+             <img src={postloader?`https://assets-v2.lottiefiles.com/a/daeab06c-117b-11ee-bdd9-e3e06aee90a6/qwDWqaeysR.gif`:image}  alt="" className=" w-full h-full object-cover  hover:scale-110 transition" />
              </Link>
             </div>  
             <div className="mt-2 flex gap-4">
-                 <i className={`fas fa-heart text-3xl 
-                 ${liked?`text-red-600`:`text-zinc-400`}
-                 `} />
-         
+            <button  onClick={()=>likethepost(_id)}> 
+           {liked?
+        
+        <i className={`fas fa-heart text-3xl 
+        text-red-500`}
+       />
+
+            :
+            <i className={`fas fa-heart text-3xl 
+            text-zinc-500`}
+           />
+  
+        }
           
+            
+            </button>
+            
                 <i className="fas fa-comment text-3xl text-zinc-300" />
                 <a href={`https://wa.me/?text=Check%20out%20this%20awesome%20content!%20Visit%20our %20site:%20https://dev1001.vercel.app/posts/view/${_id}`} target="_blank" className='font-bold'>
                 <i className="fas fa-share-nodes text-3xl text-zinc-400" />
                  </a>
             </div>
-                 <h5 className="font-bold m-1">2 Likes </h5>
+                 <h5 className="font-bold m-1">{likes.length<0 ?"No likes":likes.length + like } </h5>
                   <p className="text-wrap mt-1 p-1 font-bold">{description}  <i className="fab fa-share" /></p> 
                  
 
