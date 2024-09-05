@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyContext from '../Context/myContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AllPosts = () => {
 
+  const navigate = useNavigate()
    const context = useContext(MyContext);
    const {getAllPosts ,AllPosts ,loader  } = context;
 const [like ,setlike] = useState(0)
@@ -31,9 +32,12 @@ useEffect(()=>{
   
       )
       const data = await res.json();
-      console.log(data.post.likes)
-      setlike(data.post.likes.length)
-      
+      if(localStorage.getItem('token'))
+    {
+          console.log(data.post.likes)
+         setlike(data.post.likes.length)
+    }
+      navigate('/login')
       setpostloader(false)
     } catch (error) {
       console.log(error)
